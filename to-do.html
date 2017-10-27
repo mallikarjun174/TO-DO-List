@@ -1,0 +1,104 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+
+<head>
+
+<title>Demo of Strikethrough JavaScript string object</title>
+
+<script type="text/javascript">
+
+function my_fun(j){
+
+        var chkbox ="ckb" + j;
+
+        var my_span ="txt" + j;
+
+        var msg = chkbox + "  " + my_span;
+
+         if(document.getElementById(chkbox).checked){ 
+
+            document.getElementById(my_span).style.textDecoration='line-through';
+
+        }else{
+
+            document.getElementById(my_span).style.textDecoration='none';
+
+            }
+
+          }
+
+
+function displayOut(){
+    var input=document.getElementById("txt").value;
+      var text2=document.getElementById("txt1");
+         var text3=document.getElementById("txt2");
+               var text4=document.getElementById("txt3");
+
+    if (input.length != false) {
+      if (text2.value.length==''){
+            text2.value += input+"\n";
+          }else{
+              if (text3.value.length =='') {
+                 text3.value += input+"\n";
+                }else{
+                 text4.value += input+"\n";
+
+               }
+          }
+ 
+        }
+
+  eraseText();
+}
+
+
+  function eraseText() {
+      document.getElementById("txt").value = "";
+  }
+
+  function yourFunction(){
+     document.getElementById("txt1").value = "";
+        };
+
+        function yourFunction1(){
+     document.getElementById("txt2").value = "";
+        };
+        function yourFunction2(){
+     document.getElementById("txt3").value = "";
+        };
+
+</script>
+</head>
+<body>
+<div class="container">
+  <div style="text-align: center;">
+<h1 id="result" >To - Do</h1>
+  </div>
+  <br>
+  <div>
+<button onClick="yourFunction();" >X</button>
+<textarea id="txt1" rows="2" cols="50" readonly="readonly" ></textarea>
+<input type=checkbox  id=ckb1 value=1 onclick=my_fun(1); > 
+   </div>
+<br>
+<div>
+<button onClick="yourFunction1();" >X</button>
+<textarea id="txt2" rows="2" cols="50" readonly="readonly" ></textarea>
+<input type=checkbox  id=ckb2 value=2 onclick=my_fun(2);> 
+</div>
+<br>
+<div>
+<button onClick="yourFunction2();">X</button>
+<textarea id="txt3" rows="2" cols="50" readonly="readonly" ></textarea>
+<input type=checkbox  id=ckb3 value=3 onclick=my_fun(3);> 
+</div>
+<br>
+
+------<textarea id="txt" rows="2" cols="50"  onclick="eraseText()" style="float: middle;"></textarea><br>
+<input type="button" onclick="displayOut()" value="click" float=right>
+
+</div>
+</body>
+
+</html>
